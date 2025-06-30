@@ -1,15 +1,15 @@
-'use client';
-import Link from 'next/link';
-import { useState } from 'react';
-import { Menu, X, Moon, Sun } from 'lucide-react';
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 
 const navLinks = [
-  { href: '/about', label: 'About' },
-  { href: '/portfolio', label: 'Portfolio' },
-  { href: '/criteria', label: 'Criteria' },
-  { href: '/insights', label: 'Insights' },
-  { href: '/faq', label: 'FAQ' },
-  { href: '/contact', label: 'Contact' },
+  { href: "/about", label: "About" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/criteria", label: "Criteria" },
+  { href: "/insights", label: "Insights" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -17,16 +17,25 @@ export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleMobileMenu = () => setMobileMenuOpen(!isMobileMenuOpen);
-  const toggleDarkMode = () => setDarkMode(!darkMode);
+  const toggleDarkMode = () => {
+    setDarkMode((curr) => (curr = !curr));
+    const html = document.documentElement;
+
+    html.classList.toggle("dark");
+    console.log(darkMode);
+  };
 
   return (
-    <header className="w-full border-b border-gray-200/50 bg-white/95 backdrop-blur-xl sticky top-0 z-50 shadow-sm">
+    <header className="w-full border-b  border-gray-200/50 bg-white/95 backdrop-blur-xl sticky top-0 z-50 shadow-sm">
       {/* Subtle top accent line */}
       <div className="w-full h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500"></div>
-      
+
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Enhanced Logo */}
-        <Link href="/" className="group flex items-center space-x-2 transition-all duration-300">
+        <Link
+          href="/"
+          className="group flex items-center space-x-2 transition-all duration-300"
+        >
           <div className="relative">
             <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
               <span className="text-white font-bold text-lg">A</span>
@@ -57,10 +66,10 @@ export default function Navbar() {
               <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-200 group-hover:w-3/4 transform -translate-x-1/2"></div>
             </Link>
           ))}
-          
+
           {/* Enhanced Theme Toggle */}
-          <button 
-            onClick={toggleDarkMode} 
+          <button
+            onClick={toggleDarkMode}
             className="relative p-3 ml-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-all duration-200 group shadow-sm hover:shadow-md"
           >
             <div className="relative">
@@ -85,8 +94,8 @@ export default function Navbar() {
         {/* Enhanced Mobile Menu Toggle */}
         <div className="lg:hidden flex items-center space-x-3">
           {/* Mobile theme toggle */}
-          <button 
-            onClick={toggleDarkMode} 
+          <button
+            onClick={toggleDarkMode}
             className="p-2 rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-200"
           >
             {darkMode ? (
@@ -95,18 +104,26 @@ export default function Navbar() {
               <Moon className="w-5 h-5 text-slate-600" />
             )}
           </button>
-          
+
           {/* Mobile menu button */}
-          <button 
+          <button
             onClick={toggleMobileMenu}
             className="p-2 rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-200 relative group"
           >
             <div className="relative w-6 h-6 flex items-center justify-center">
-              <Menu 
-                className={`w-5 h-5 text-gray-700 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0'}`} 
+              <Menu
+                className={`w-5 h-5 text-gray-700 transition-all duration-300 ${
+                  isMobileMenuOpen
+                    ? "opacity-0 rotate-90"
+                    : "opacity-100 rotate-0"
+                }`}
               />
-              <X 
-                className={`w-5 h-5 text-gray-700 absolute transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'}`} 
+              <X
+                className={`w-5 h-5 text-gray-700 absolute transition-all duration-300 ${
+                  isMobileMenuOpen
+                    ? "opacity-100 rotate-0"
+                    : "opacity-0 -rotate-90"
+                }`}
               />
             </div>
           </button>
@@ -114,7 +131,11 @@ export default function Navbar() {
       </div>
 
       {/* Enhanced Mobile Menu */}
-      <div className={`lg:hidden overflow-hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+      <div
+        className={`lg:hidden overflow-hidden transition-all duration-300 ${
+          isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
         <div className="bg-gradient-to-br from-gray-50 to-blue-50/30 border-t border-gray-200/50">
           <div className="max-w-7xl mx-auto px-6 py-6">
             <div className="grid grid-cols-2 gap-3 mb-6">
@@ -130,7 +151,7 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-            
+
             {/* Mobile CTA */}
             <Link
               href="/contact"

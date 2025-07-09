@@ -32,7 +32,7 @@ const principles = [
 
 export default function InvestmentPhilosophySection() {
   return (
-    <section className="bg-gray-50 dark:bg-zinc-900 py-20 border-b">
+    <section className="bg-gray-50 dark:bg-zinc-900 py-20 ">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-4">

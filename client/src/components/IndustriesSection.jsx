@@ -6,7 +6,7 @@ const sectors = [
   {
     level: 'Highly Interested',
     description: 'Actively looking to invest in these high-impact sectors.',
-    color: 'bg-blue-50 border-blue-300 dark:bg-blue-950 dark:border-blue-800',
+    color: 'bg-yellow-50 border-yellow-300 dark:bg-yellow-950 dark:border-yellow-700',
     items: [
       { label: 'HealthTech', icon: <HeartPulse /> },
       { label: 'AI / Machine Learning', icon: <Cpu /> },
@@ -17,7 +17,7 @@ const sectors = [
   {
     level: 'Open to Explore',
     description: 'Exploring opportunities in these emerging areas.',
-    color: 'bg-yellow-50 border-yellow-300 dark:bg-yellow-950 dark:border-yellow-700',
+    color: 'bg-gray-50 border-gray-300 dark:bg-zinc-800 dark:border-gray-700',
     items: [
       { label: 'Cybersecurity', icon: <ShieldCheck /> },
       { label: 'AgriTech', icon: <Leaf /> },
@@ -41,7 +41,7 @@ const sectors = [
 
 export default function IndustriesSection() {
   return (
-    <section className="py-20 bg-white dark:bg-black border-b">
+    <section className="py-20 bg-white dark:bg-black ">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-4">
           Industries & Domains of Interest

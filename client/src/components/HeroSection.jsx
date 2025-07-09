@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function HeroSection() {
   return (
-    <section className="bg-white dark:bg-black py-20 border-b">
+    <section className="bg-white dark:bg-black py-40 h-screen">
       <div className="max-w-7xl mx-auto px-6 text-center">
         {/* Headline */}
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-6">
@@ -32,7 +32,7 @@ export default function HeroSection() {
               Submit Your Pitch
             </span>
           </Link>
-          <Link href="/portfolio">
+          <Link href="/#portfolio">
             <span className="inline-block px-6 py-3 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 rounded-full font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition">
               View Portfolio
             </span>
